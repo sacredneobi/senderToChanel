@@ -18,10 +18,24 @@ loader(
   }
 );
 
+// bot.telegram.sendMediaGroup(ctx.message.from.id, [
+//   {
+//     type: "photo",
+//     media:
+//       "https://upload.wikimedia.org/wikipedia/commons/b/b5/IMG-20190601-WA0004.jpg",
+//     caption: ctx.message.text.replace("/send ", ""),
+//   },
+//   {
+//     type: "photo",
+//     media: "https://tinypng.com/images/social/website.jpg",
+//   },
+// ]);
+
 bot.telegram.setMyCommands(commands);
 
 bot.use((ctx, next) => {
-  console.log(ctx.update);
+  // console.log(ctx.update.message.photo);
+
   next();
 });
 
