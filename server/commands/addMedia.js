@@ -28,7 +28,7 @@ const defPrd = (ctx) => {
 };
 
 const addMediaToFile = (id, type, media, ctx, isArray = false) => {
-  const file = `./tmp/${id}.post`;
+  const file = `../../tmp/${id}.post`;
   if (fs.existsSync(file)) {
     const data = fs.readFileSync(file);
     try {

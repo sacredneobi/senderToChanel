@@ -6,7 +6,7 @@ const def = (bot) => {
   return (ctx) => {
     empty.dataTime = Date.now();
     fs.writeFileSync(
-      `./tmp/${ctx.message.chat.id}.post`,
+      `../../tmp/${ctx.message.chat.id}.post`,
       JSON.stringify(empty, null, 2),
       {
         encoding: "utf8",

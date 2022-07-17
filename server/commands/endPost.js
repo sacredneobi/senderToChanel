@@ -29,7 +29,7 @@ ___________________________________________
 
 const def = (bot) => {
   return (ctx) => {
-    const file = `./tmp/${ctx.message.from.id}.post`;
+    const file = `../../tmp/${ctx.message.from.id}.post`;
     if (fs.existsSync(file)) {
       bot.telegram
         .sendMediaGroup(ctx.message.from.id, readMedia(file, ctx))
