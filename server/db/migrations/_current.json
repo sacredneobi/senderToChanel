@@ -1,0 +1,147 @@
+{
+    "tables": {
+        "brands": {
+            "tableName": "brands",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "caption": {
+                    "field": "caption",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "description": {
+                    "field": "description",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "media": {
+            "tableName": "media",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "path": {
+                    "field": "path",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "description": {
+                    "field": "description",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "isVideo": {
+                    "field": "isVideo",
+                    "seqType": "Sequelize.BOOLEAN"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "postId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "posts",
+                        "key": "id"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "NO ACTION",
+                    "field": "postId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "posts": {
+            "tableName": "posts",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "caption": {
+                    "field": "caption",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "description": {
+                    "field": "description",
+                    "seqType": "Sequelize.TEXT"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "brandId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "brands",
+                        "key": "id"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "NO ACTION",
+                    "field": "brandId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "prices": {
+            "tableName": "prices",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "sale": {
+                    "field": "sale",
+                    "seqType": "Sequelize.FLOAT"
+                },
+                "discount": {
+                    "field": "discount",
+                    "seqType": "Sequelize.FLOAT"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "postId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "posts",
+                        "key": "id"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "NO ACTION",
+                    "field": "postId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "exists": true,
+    "revision": 4
+}

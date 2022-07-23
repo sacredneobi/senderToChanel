@@ -7,10 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
     "dbCreate": "cross-env MIGRATE_TOOL=true npx sequelize-cli db:create",
-    "migrate": "cross-env MIGRATE_TOOL=true npx sequelize-cli db:migrate",
-    "migrateUndo": "cross-env MIGRATE_TOOL=true npx sequelize-cli db:migrate:undo",
-    "migrateCreate": "cross-env MIGRATE_TOOL=true npx sequelize-mig migration:make -n",
-    "migratePrev": "cross-env MIGRATE_TOOL=true npx sequelize-mig migration:make --preview"
+    "mi": "cross-env MIGRATE_TOOL=true npx sequelize-cli db:migrate",
+    "miUndo": "cross-env MIGRATE_TOOL=true npx sequelize-cli db:migrate:undo",
+    "miCreate": "cross-env MIGRATE_TOOL=true npx sequelize-mig migration:make -n",
+    "miPrev": "cross-env MIGRATE_TOOL=true npx sequelize-mig migration:make --preview",
+    "postinstall": "cd ../client && npm i --legacy-peer-deps"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,7 @@
     "sequelize": "^6.20.1",
     "sequelize-cli": "^6.4.1",
     "sequelize-mig": "github:sacredneobi/sequelize-mig",
-    "telegraf": "^4.7.0"
+    "telegraf": "^4.7.0",
+    "uuid": "^8.3.2"
   }
 }

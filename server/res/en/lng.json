@@ -1,1 +1,4 @@
-{}
+{
+  "dashboard": { "menu": "Olga" },
+  "routes": { "posts": "Posts", "brands": "Brands" }
+}

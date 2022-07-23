@@ -66,6 +66,7 @@ module.exports = (options, data, getData) => {
           );
         }
       } catch (error) {
+        // console.log(error);
         getErrorMessage(moduleName, error.message);
       }
     });

@@ -34,7 +34,7 @@ loader(
 bot.telegram.setMyCommands(commands);
 
 bot.use((ctx, next) => {
-  // console.log(ctx.update.message.photo);
+  // console.log(ctx.update.channel_post.reply_markup.inline_keyboard);
 
   next();
 });
